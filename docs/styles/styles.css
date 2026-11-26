@@ -4,6 +4,10 @@
     --white-color: #FFFFFF;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
