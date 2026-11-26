@@ -107,6 +107,11 @@
     line-height: 1.65;
 }
 
+.learn-content a {
+    color: var(--brand-color);
+    text-underline-offset: 0.2em;
+}
+
 .learn-note {
     padding: 0.9rem 1rem;
     color: #d3d8de;

@@ -32,19 +32,34 @@
             <nav aria-label="Documentation navigation">
                 <a class="learn-sidebar__home" href="#api-reference">Pyxil Components</a>
                 <ul>
-                    <li><a href="#overview">Component Overview</a></li>
+                    <li><a href="#overview">Namespaces Overview</a></li>
                     <li>
                         <details open>
-                            <summary>Pyxil.Core</summary>
+                            <summary>Pyxil.Framework</summary>
                             <ul>
-                                <li><a href="#game-lifecycle">Game Lifecycle</a></li>
-                                <li><a href="#frame-time">Frame Time</a></li>
+                                <li><a href="#core-components">Core Components</a></li>
                             </ul>
                         </details>
                     </li>
                     <li>
                         <details open>
-                            <summary>Pyxil.Graphics</summary>
+                            <summary>Pyxil.Framework.Audio</summary>
+                            <ul>
+                                <li><a href="#audio">Audio</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details open>
+                            <summary>Pyxil.Framework.Content</summary>
+                            <ul>
+                                <li><a href="#content-manager">Content Manager</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details open>
+                            <summary>Pyxil.Framework.Graphics</summary>
                             <ul>
                                 <li><a href="#graphics">Graphics</a></li>
                             </ul>
@@ -52,7 +67,7 @@
                     </li>
                     <li>
                         <details open>
-                            <summary>Pyxil.Input</summary>
+                            <summary>Pyxil.Framework.Input</summary>
                             <ul>
                                 <li><a href="#input">Input</a></li>
                             </ul>
@@ -60,12 +75,16 @@
                     </li>
                     <li>
                         <details open>
-                            <summary>Pyxil.Resources</summary>
+                            <summary>Pyxil.Framework.Utils</summary>
                             <ul>
-                                <li><a href="#resources">Resources</a></li>
+                                <li><a href="#utils">Utilities</a></li>
                             </ul>
                         </details>
                     </li>
+                    <li><a href="#logging">Logging and Errors</a></li>
+                    <li><a href="#resource-cleanup">Resource Cleanup</a></li>
+                    <li><a href="#platform-support">Platform Support</a></li>
+                    <li><a href="#support">Getting Support</a></li>
                     <li><a href="#getting-started">Getting Started</a></li>
                 </ul>
             </nav>
@@ -80,97 +99,167 @@
             <section aria-labelledby="welcome-title">
                 <h2 id="welcome-title">Welcome to Pyxil</h2>
                 <p>
-                    This guide introduces the main areas of a desktop game framework:
-                    the game loop, timing, graphics, input, and resource management.
+                    This guide summarizes the namespaces and components defined in the
+                    Pyxil Software Requirements Specification, version 0.3.
                 </p>
                 <p class="learn-note">
-                    These are conceptual component areas. Pyxil's Python implementation and public API
-                    are not included in this repository yet, so class names and code examples are not
-                    documented here.
+                    The SRS defines required components and responsibilities, but this repository does
+                    not contain their Python implementation or method signatures. Treat these pages as
+                    requirements documentation, not as a runnable API reference.
                 </p>
             </section>
 
             <section id="overview" aria-labelledby="overview-title">
-                <h2 id="overview-title">Component Overview</h2>
-                <p>Pyxil is organized around these core responsibilities:</p>
+                <h2 id="overview-title">Namespaces Overview</h2>
+                <p>The SRS defines the following namespaces:</p>
                 <div class="learn-table-wrap">
                     <table class="learn-table">
                         <thead>
                             <tr>
-                                <th scope="col">Component Area</th>
+                                <th scope="col">Namespace</th>
                                 <th scope="col">Purpose</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><code>Pyxil.Core</code></th>
-                                <td>Owns the game lifecycle and the repeated update-and-draw cycle.</td>
+                                <th scope="row"><code>Pyxil.Framework</code></th>
+                                <td>Core framework classes and game/window management.</td>
                             </tr>
                             <tr>
-                                <th scope="row"><code>Pyxil.Graphics</code></th>
-                                <td>Coordinates drawing and the visual output of a game.</td>
+                                <th scope="row"><code>Pyxil.Framework.Audio</code></th>
+                                <td>Core audio framework classes and audio playback.</td>
                             </tr>
                             <tr>
-                                <th scope="row"><code>Pyxil.Input</code></th>
-                                <td>Provides a place to collect and respond to player input.</td>
+                                <th scope="row"><code>Pyxil.Framework.Content</code></th>
+                                <td>Content loading and management through <code>ContentManager</code>.</td>
                             </tr>
                             <tr>
-                                <th scope="row"><code>Pyxil.Resources</code></th>
-                                <td>Organizes the loading and lifetime of resources used by a game.</td>
+                                <th scope="row"><code>Pyxil.Framework.Graphics</code></th>
+                                <td>Rendering, textures, and visual effects.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework.Input</code></th>
+                                <td>Input and I/O, including keyboard, mouse, and gamepad.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework.Utils</code></th>
+                                <td>Utilities that assist with game development.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <section class="learn-component" id="game-lifecycle" aria-labelledby="lifecycle-title">
-                <h2 id="lifecycle-title">Game Lifecycle</h2>
+            <section class="learn-component" id="core-components" aria-labelledby="core-title">
+                <h2 id="core-title">Core Components</h2>
                 <p>
-                    A game lifecycle coordinates startup, repeated updates, drawing, and shutdown.
-                    Keep game state changes in the update step and visual work in the draw step.
-                </p>
-            </section>
-
-            <section class="learn-component" id="frame-time" aria-labelledby="frame-time-title">
-                <h2 id="frame-time-title">Frame Time</h2>
-                <p>
-                    Frame time is the elapsed time between updates. Use elapsed time when calculating
-                    movement or animation so gameplay is less dependent on the machine's frame rate.
+                    The SRS names <code>GameManager</code>, <code>GameWindow</code>,
+                    <code>GameWindowManager</code>, and <code>GraphicsDeviceManager</code>
+                    as framework components. <code>GameWindow</code> and
+                    <code>GameWindowManager</code> are required to support creating and managing
+                    multiple application windows.
                 </p>
             </section>
 
             <section class="learn-component" id="graphics" aria-labelledby="graphics-title">
                 <h2 id="graphics-title">Graphics</h2>
                 <p>
-                    The graphics area is responsible for presenting the game's visual state.
-                    Keep rendering separate from input handling and game-state updates.
+                    <code>Pyxil.Framework.Graphics</code> covers rendering, textures, and visual
+                    effects. <code>GraphicsDeviceManager</code> is one of the classes identified
+                    for managing graphics resources.
                 </p>
             </section>
 
             <section class="learn-component" id="input" aria-labelledby="input-title">
                 <h2 id="input-title">Input</h2>
                 <p>
-                    The input area represents player actions. Read input during the update cycle
-                    and use it to change game state rather than drawing directly from input handlers.
+                    <code>InputManager</code> is intended to manage input events.
+                    <code>Pyxil.Framework.Input</code> must cover keyboard, mouse, and gamepad
+                    input across supported desktop environments.
                 </p>
             </section>
 
-            <section class="learn-component" id="resources" aria-labelledby="resources-title">
-                <h2 id="resources-title">Resources</h2>
+            <section class="learn-component" id="content-manager" aria-labelledby="content-title">
+                <h2 id="content-title">Content Manager</h2>
                 <p>
-                    The resources area provides a place to organize assets used by the game.
-                    Centralizing resource ownership helps avoid loading the same asset repeatedly
-                    and makes cleanup easier.
+                    <code>ContentManager</code>, in <code>Pyxil.Framework.Content</code>, is
+                    responsible for loading and managing game content.
+                </p>
+            </section>
+
+            <section class="learn-component" id="audio" aria-labelledby="audio-title">
+                <h2 id="audio-title">Audio</h2>
+                <p>
+                    <code>Pyxil.Framework.Audio</code> contains the audio components. The SRS
+                    requires audio playback and audio-device support on supported desktop platforms.
+                </p>
+            </section>
+
+            <section class="learn-component" id="utils" aria-labelledby="utils-title">
+                <h2 id="utils-title">Utilities</h2>
+                <p>
+                    <code>Pyxil.Framework.Utils</code> is reserved for tools that assist game
+                    development. The SRS does not yet specify individual utility classes.
+                </p>
+            </section>
+
+            <section class="learn-component" id="logging" aria-labelledby="logging-title">
+                <h2 id="logging-title">Logging and Errors</h2>
+                <p>
+                    Pyxil must provide structured log entries with relevant event details,
+                    severity, timestamp, and source component. The SRS lists these severity levels:
+                    <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>,
+                    <code>CRITICAL</code>, <code>DEBUG</code>, and <code>EVENT</code>.
+                </p>
+                <p>
+                    Error messages should identify the failed operation and, where practical,
+                    explain the cause or suggest a correction.
+                </p>
+            </section>
+
+            <section class="learn-component" id="resource-cleanup" aria-labelledby="cleanup-title">
+                <h2 id="cleanup-title">Resource Cleanup</h2>
+                <p>
+                    The framework should attempt to release resources such as windows, audio, and
+                    memory when they are no longer in use, including when an exception interrupts
+                    execution.
+                </p>
+            </section>
+
+            <section class="learn-component" id="platform-support" aria-labelledby="platform-title">
+                <h2 id="platform-title">Platform Support</h2>
+                <p>
+                    The SRS targets Windows, Linux, and macOS desktop environments, including
+                    64-bit systems. Supported Python versions should be published for each release.
+                    Packaging compatibility is to be validated for PyInstaller, py2exe, and Nuitka.
+                </p>
+                <p>
+                    The SRS proposes a startup target of under five seconds for at least 94.4% of
+                    measured attempts; it notes that this target still requires stakeholder
+                    confirmation.
+                </p>
+            </section>
+
+            <section class="learn-component" id="support" aria-labelledby="support-title">
+                <h2 id="support-title">Getting Support</h2>
+                <p>
+                    Report defects, ask questions, or suggest features through the
+                    <a href="https://github.com/1x1-Studio/Pyxil/issues">Pyxil issue tracker</a>.
+                    Include the Pyxil and Python versions, operating system, steps to reproduce,
+                    and relevant error output.
                 </p>
             </section>
 
             <section class="learn-component" id="getting-started" aria-labelledby="getting-started-title">
-                <h2 id="getting-started-title">Getting Started</h2>
+                <h2 id="getting-started-title">User Manual: Getting Started</h2>
                 <ol>
-                    <li>Plan the game state and the changes that happen during each update.</li>
-                    <li>Separate state updates from rendering.</li>
-                    <li>Use elapsed frame time for time-based movement and animation.</li>
-                    <li>Keep input and resource handling separate from game rules.</li>
+                    <li>Choose a Pyxil release and check its published Python and platform support.</li>
+                    <li>Use <code>GameManager</code> to organize the game and window components.</li>
+                    <li>Use <code>GameWindow</code> and <code>GameWindowManager</code> when managing windows.</li>
+                    <li>Connect graphics, input, content, and audio through their respective managers and namespaces.</li>
+                    <li>Use structured logs and detailed error messages when troubleshooting.</li>
+                    <li>Ensure windows, audio, and other resources are released during shutdown and error handling.</li>
+                    <li>Validate packaged builds on every operating system and Python version you intend to support.</li>
                 </ol>
             </section>
         </article>
