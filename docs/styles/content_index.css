@@ -88,8 +88,13 @@
 }
 
 .team-page {
+    min-height: 100vh;
     color: #f8f9fa;
     background-color: #212529;
+}
+
+.team-page .site-footer {
+    margin-top: auto;
 }
 
 .team-cards {
