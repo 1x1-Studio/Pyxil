@@ -1,0 +1,171 @@
+.learn-page {
+    min-height: 100vh;
+    color: #f8f9fa;
+    background-color: #212529;
+}
+
+.learn-page .site-footer {
+    margin-top: auto;
+}
+
+.learn-layout {
+    display: grid;
+    flex: 1 0 auto;
+    grid-template-columns: 260px minmax(0, 1fr);
+}
+
+.learn-sidebar {
+    padding: 1.5rem 1rem;
+    background-color: #171a24;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.learn-sidebar nav {
+    position: sticky;
+    top: 1rem;
+}
+
+.learn-sidebar__home {
+    display: block;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    color: #f8f9fa;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.learn-sidebar ul {
+    margin: 0;
+    padding-left: 0.75rem;
+    list-style: none;
+}
+
+.learn-sidebar > nav > ul {
+    padding-left: 0;
+}
+
+.learn-sidebar li {
+    margin: 0.25rem 0;
+}
+
+.learn-sidebar a,
+.learn-sidebar summary {
+    color: rgba(248, 249, 250, 0.78);
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.learn-sidebar a {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+}
+
+.learn-sidebar a:hover,
+.learn-sidebar a:focus-visible,
+.learn-sidebar summary:hover {
+    color: var(--brand-color);
+}
+
+.learn-sidebar summary::marker {
+    color: var(--brand-color);
+}
+
+.learn-content {
+    width: 100%;
+    max-width: 1080px;
+    padding: 3rem clamp(1.5rem, 4vw, 4rem);
+}
+
+.learn-heading {
+    margin-bottom: 1.5rem;
+}
+
+.learn-heading h1 {
+    margin: 0 0 0.25rem;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 500;
+}
+
+.learn-heading p {
+    margin: 0;
+    color: #8b949e;
+}
+
+.learn-content section + section {
+    margin-top: 2.5rem;
+}
+
+.learn-content h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.learn-content p,
+.learn-content li {
+    line-height: 1.65;
+}
+
+.learn-note {
+    padding: 0.9rem 1rem;
+    color: #d3d8de;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid var(--brand-color);
+}
+
+.learn-table-wrap {
+    overflow-x: auto;
+}
+
+.learn-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.learn-table th,
+.learn-table td {
+    padding: 0.7rem;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #3c4248;
+}
+
+.learn-table thead th {
+    color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.035);
+}
+
+.learn-table tbody th {
+    min-width: 190px;
+}
+
+.learn-content code {
+    color: #ff6b9b;
+}
+
+.learn-content ol {
+    padding-left: 1.4rem;
+}
+
+@media (max-width: 767.98px) {
+    .learn-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .learn-sidebar {
+        max-height: 260px;
+        overflow-y: auto;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .learn-sidebar nav {
+        position: static;
+    }
+
+    .learn-content {
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+    }
+}
