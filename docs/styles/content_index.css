@@ -139,6 +139,100 @@
     margin: 0;
 }
 
+.community-page {
+    min-height: 100vh;
+    color: #f8f9fa;
+    background-color: #212529;
+}
+
+.community-page .site-footer {
+    margin-top: auto;
+}
+
+.community-intro h1 {
+    margin: 0 0 0.5rem;
+    color: inherit;
+    font-size: calc(1.325rem + 0.9vw);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.community-intro p {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.community-section > h2 {
+    margin-bottom: 1.25rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.community-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+}
+
+.community-card {
+    overflow: hidden;
+    color: inherit;
+    background-color: #212529;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.community-card:hover,
+.community-card:focus-visible {
+    color: inherit;
+    border-color: var(--brand-color);
+    transform: translateY(-3px);
+}
+
+.community-card:focus-visible {
+    outline: 2px solid var(--brand-color);
+    outline-offset: 3px;
+}
+
+.community-card__visual {
+    display: grid;
+    min-height: 165px;
+    place-items: center;
+    background:
+        radial-gradient(circle at 50% 40%, rgba(255, 22, 93, 0.2), transparent 58%),
+        linear-gradient(145deg, #171a24, #10131b);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.community-card__visual svg {
+    width: 4rem;
+    height: 4rem;
+    fill: none;
+    stroke: var(--brand-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.5;
+}
+
+.community-card__content {
+    min-height: 195px;
+    padding: 1.5rem 1.75rem;
+}
+
+.community-card__content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.community-card__content p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
 .site-footer {
     padding: 1.5rem max(1.5rem, calc((100% - 1320px) / 2));
     color: #f8f9fa;
@@ -201,6 +295,10 @@
     }
 
     .team-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .community-cards {
         grid-template-columns: 1fr;
     }
 
