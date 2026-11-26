@@ -30,7 +30,6 @@ html::-webkit-scrollbar-thumb:hover {
 
 body {
     margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -47,6 +46,7 @@ body {
     background:
         radial-gradient(ellipse at 50% 45%, rgba(255, 22, 93, 0.13), transparent 55%),
         linear-gradient(145deg, #10131b, #171a24 55%, #10131b);
+    min-height: 40vh;
 }
 
 .container-header__cubes {
