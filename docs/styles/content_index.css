@@ -1,22 +1,43 @@
+.page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+}
+
+.intro-section {
+    max-width: 760px;
+}
+
+.intro-section h2 {
+    margin-bottom: 1rem;
+}
+
+.intro-section p {
+    margin: 0;
+    line-height: 1.75;
+}
+
 .open-source-section {
-    margin-bottom: 3rem;
+    margin-bottom: 0;
 }
 
 .open-source-section > h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .info-cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: 1.75rem;
 }
 
 .info-card {
     display: flex;
     flex-direction: column;
     min-height: 220px;
-    padding: 1.5rem 2rem;
+    padding: 1.75rem;
     color: #f8f9fa;
     background-color: #212529;
     border: 1px solid rgba(255, 255, 255, 0.75);
@@ -63,6 +84,12 @@
 }
 
 @media (max-width: 767.98px) {
+    .page-content {
+        gap: 2.5rem;
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+    }
+
     .info-cards {
         grid-template-columns: 1fr;
     }
