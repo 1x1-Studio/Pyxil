@@ -99,20 +99,16 @@
         <article class="learn-content">
             <header class="learn-heading" id="api-reference">
                 <h1>API Reference</h1>
-                <p>Pyxil framework component guide.</p>
-            </header>
-
-            <section aria-labelledby="welcome-title">
-                <h2 id="welcome-title">Welcome to Pyxil</h2>
                 <p>
-                    This guide summarizes the namespaces and components defined in the
-                    Pyxil Software Requirements Specification, version 0.3.
+                    Explore the components and namespaces available in Pyxil 0.3.
+                    This documentation introduces the framework's core architecture,
+                    its main features, and the tools available to developers when building
+                    desktop games with Python.
                 </p>
-            </section>
+            </header>
 
             <section id="overview" aria-labelledby="overview-title">
                 <h2 id="overview-title">Namespaces Overview</h2>
-                <p>The SRS defines the following namespaces:</p>
                 <div class="learn-table-wrap">
                     <table class="learn-table">
                         <thead>
@@ -151,93 +147,35 @@
                 </div>
             </section>
 
-            <section class="learn-component" id="core-components" aria-labelledby="core-title">
-                <h2 id="core-title">Core Components</h2>
-                <p>
-                    The SRS names <code>GameManager</code>, <code>GameWindow</code>,
-                    <code>GameWindowManager</code>, and <code>GraphicsDeviceManager</code>
-                    as framework components. <code>GameWindow</code> and
-                    <code>GameWindowManager</code> are required to support creating and managing
-                    multiple application windows.
-                </p>
-            </section>
-
-            <section class="learn-component" id="graphics" aria-labelledby="graphics-title">
-                <h2 id="graphics-title">Graphics</h2>
-                <p>
-                    <code>Pyxil.Framework.Graphics</code> covers rendering, textures, and visual
-                    effects. <code>GraphicsDeviceManager</code> is one of the classes identified
-                    for managing graphics resources.
-                </p>
-            </section>
-
-            <section class="learn-component" id="input" aria-labelledby="input-title">
-                <h2 id="input-title">Input</h2>
-                <p>
-                    <code>InputManager</code> is intended to manage input events.
-                    <code>Pyxil.Framework.Input</code> must cover keyboard, mouse, and gamepad
-                    input across supported desktop environments.
-                </p>
-            </section>
-
-            <section class="learn-component" id="content-manager" aria-labelledby="content-title">
-                <h2 id="content-title">Content Manager</h2>
-                <p>
-                    <code>ContentManager</code>, in <code>Pyxil.Framework.Content</code>, is
-                    responsible for loading and managing game content.
-                </p>
-            </section>
-
-            <section class="learn-component" id="audio" aria-labelledby="audio-title">
-                <h2 id="audio-title">Audio</h2>
-                <p>
-                    <code>Pyxil.Framework.Audio</code> contains the audio components. The SRS
-                    requires audio playback and audio-device support on supported desktop platforms.
-                </p>
-            </section>
-
-            <section class="learn-component" id="utils" aria-labelledby="utils-title">
-                <h2 id="utils-title">Utilities</h2>
-                <p>
-                    <code>Pyxil.Framework.Utils</code> is reserved for tools that assist game
-                    development. The SRS does not yet specify individual utility classes.
-                </p>
-            </section>
-
             <section class="learn-component" id="logging" aria-labelledby="logging-title">
                 <h2 id="logging-title">Logging and Errors</h2>
                 <p>
-                    Pyxil must provide structured log entries with relevant event details,
-                    severity, timestamp, and source component. The SRS lists these severity levels:
+                    Pyxil 0.3 features a structured logging system designed to record framework events
+                    and provide developers with relevant diagnostic information. Log entries include
+                    severity levels, timestamps, and source components, helping developers monitor
+                    application behavior and identify potential issues. Supported log levels include
                     <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>,
                     <code>CRITICAL</code>, <code>DEBUG</code>, and <code>EVENT</code>.
                 </p>
                 <p>
-                    Error messages should identify the failed operation and, where practical,
-                    explain the cause or suggest a correction.
-                </p>
-            </section>
-
-            <section class="learn-component" id="resource-cleanup" aria-labelledby="cleanup-title">
-                <h2 id="cleanup-title">Resource Cleanup</h2>
-                <p>
-                    The framework should attempt to release resources such as windows, audio, and
-                    memory when they are no longer in use, including when an exception interrupts
-                    execution.
+                    The framework also provides descriptive error messages to help developers
+                    understand failed operations, identify their causes, and find appropriate
+                    solutions.
                 </p>
             </section>
 
             <section class="learn-component" id="platform-support" aria-labelledby="platform-title">
                 <h2 id="platform-title">Platform Support</h2>
                 <p>
-                    The SRS targets Windows, Linux, and macOS desktop environments, including
-                    64-bit systems. Supported Python versions should be published for each release.
-                    Packaging compatibility is to be validated for PyInstaller, py2exe, and Nuitka.
+                    Pyxil 0.3 is designed to support desktop environments across Windows, Linux,
+                    and macOS, with a focus on 64-bit systems. The framework aims to provide a
+                    consistent development experience across different operating systems and
+                    Python environments.
                 </p>
                 <p>
-                    The SRS proposes a startup target of under five seconds for at least 94.4% of
-                    measured attempts; it notes that this target still requires stakeholder
-                    confirmation.
+                    The framework is designed with application distribution in mind, allowing
+                    developers to explore packaging solutions such as PyInstaller, py2exe, and
+                    Nuitka when preparing their games for deployment.
                 </p>
             </section>
 
@@ -251,18 +189,6 @@
                 </p>
             </section>
 
-            <section class="learn-component" id="getting-started" aria-labelledby="getting-started-title">
-                <h2 id="getting-started-title">User Manual: Getting Started</h2>
-                <ol>
-                    <li>Choose a Pyxil release and check its published Python and platform support.</li>
-                    <li>Use <code>GameManager</code> to organize the game and window components.</li>
-                    <li>Use <code>GameWindow</code> and <code>GameWindowManager</code> when managing windows.</li>
-                    <li>Connect graphics, input, content, and audio through their respective managers and namespaces.</li>
-                    <li>Use structured logs and detailed error messages when troubleshooting.</li>
-                    <li>Ensure windows, audio, and other resources are released during shutdown and error handling.</li>
-                    <li>Validate packaged builds on every operating system and Python version you intend to support.</li>
-                </ol>
-            </section>
         </article>
     </main>
 
