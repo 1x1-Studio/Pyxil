@@ -112,13 +112,6 @@
     text-underline-offset: 0.2em;
 }
 
-.learn-note {
-    padding: 0.9rem 1rem;
-    color: #d3d8de;
-    background-color: rgba(255, 255, 255, 0.04);
-    border-left: 3px solid var(--brand-color);
-}
-
 .learn-table-wrap {
     overflow-x: auto;
 }
@@ -147,10 +140,6 @@
 
 .learn-content code {
     color: #ff6b9b;
-}
-
-.learn-content ol {
-    padding-left: 1.4rem;
 }
 
 @media (max-width: 767.98px) {
