@@ -55,7 +55,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Syntax</th>
-                                <td><code>class Game()</code></td>
+                                <td><code>class Game(object)</code></td>
                             </tr>
                         </tbody>
                     </table>
@@ -74,7 +74,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><code>Game()</code></th>
+                                <th scope="row"><code>Game(debug_console: <code>bool</code> = False)</code></th>
                                 <td>Initializes a new instance of the <code>Game</code> class.</td>
                             </tr>
                         </tbody>
@@ -96,9 +96,9 @@
                         <tbody>
                             <tr>
                                 <th scope="row"><code>gameWindow</code></th>
-                                <td><code>GameWindow</code></td>
+                                <td><code>GameWindow | GameConsole</code></td>
                                 <td>Get the window object. If the object is None, it must return 
-                                    an instance of ConsoleWindow;
+                                    an instance of <code>GameConsole</code>.
                                 </td>
                             </tr>
                             <tr>
@@ -107,6 +107,13 @@
                                 <td>
                                     It is created before <code>initialize</code> runs. This variable
                                     manages the application's time.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>spriteBatch</code></th>
+                                <td><code>SpriteBatch</code></td>
+                                <td>
+                                    Specifies the screen to be drawn.
                                 </td>
                             </tr>
                         </tbody>
