@@ -32,13 +32,15 @@
         <article class="learn-content">
             <header class="learn-heading" id="class-name">
                 <h1>Game</h1>
-                <p>Namespace: <code>Pyxil.Framework</code></p>
             </header>
 
             <section id="summary" aria-labelledby="summary-title">
                 <h2 id="summary-title">Summary</h2>
                 <p>
-                    Está é a classe principal para qualquer jogo.
+                    This is the main class for any game. The class 
+                    <code>Game</code> should be used as the application's entry-point.
+                    All functions—<code>initialize</code>, <code>update</code>, and <code>draw</code> 
+                    —must be called by it. 
                 </p>
             </section>
 
@@ -52,12 +54,8 @@
                                 <td><code>Pyxil.Framework</code></td>
                             </tr>
                             <tr>
-                                <th scope="row">Assembly</th>
-                                <td><code>Pyxil.dll</code></td>
-                            </tr>
-                            <tr>
                                 <th scope="row">Syntax</th>
-                                <td><code>public class ClassName</code></td>
+                                <td><code>class Game()</code></td>
                             </tr>
                         </tbody>
                     </table>
@@ -76,8 +74,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><code>ClassName()</code></th>
-                                <td>Initializes a new instance of the <code>ClassName</code> class.</td>
+                                <th scope="row"><code>Game()</code></th>
+                                <td>Initializes a new instance of the <code>Game</code> class.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -97,14 +95,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><code>Property1</code></th>
-                                <td><code>string</code></td>
-                                <td>Gets or sets the first property value.</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><code>Property2</code></th>
-                                <td><code>int</code></td>
-                                <td>Gets or sets the second property value.</td>
+                                <th scope="row"><code>gameWindow</code></th>
+                                <td><code>GameWindow</code></td>
+                                <td>Get the window object.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -123,7 +116,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><code>MethodName()</code></th>
+                                <th scope="row"><code>initialize()</code></th>
+                                <td>Describes the operation performed by this method.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>update(gameTime: GameTime)</code></th>
+                                <td>Describes the operation performed by this method.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>draw(spriteBatch: SpriteBatch)</code></th>
                                 <td>Describes the operation performed by this method.</td>
                             </tr>
                         </tbody>
