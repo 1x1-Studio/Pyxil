@@ -18,6 +18,20 @@ class GameTest(pyxil.framework.Game):
         return super().draw(spriteBatch)
 
 
+class GameTestWithError(pyxil.framework.Game):
+    def __init__(self, console: bool = False):
+        super().__init__(console=console)
+
+    def initialize(self):
+        return super().initialize()
+
+    def update(self, gameTime: None):
+        return super().update(gameTime)
+
+    def draw(self, spriteBatch: None):
+        return super().draw(spriteBatch)
+
+
 class TestGameClass(unittest.TestCase):
 
     def test_create_game_instance(self):
@@ -37,4 +51,4 @@ class TestGameClass(unittest.TestCase):
         self.assertIsInstance(game.gameWindow, pyxil.framework.GameConsole)
 
     def test_initialize_method_with_an_exception(self):
-        game = GameTest(console=True)
+        game = GameTestWithError(console=True)
