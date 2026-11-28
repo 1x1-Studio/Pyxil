@@ -4,6 +4,9 @@ from pyxil.framework.gametime import GameTime
 from pyxil.framework.gamewindow import GameWindow
 from pyxil.framework.gameconsole import GameConsole
 
+from pyxil.framework.graphics import SpriteBatch
+
+
 class Game(object):
     """Base class for creating a Pyxil application.
 
@@ -15,6 +18,7 @@ class Game(object):
         """Initialize a new :class:`Game` instance."""
         self.gameWindow: Union[GameWindow | GameConsole] = self.__set_window() 
         self.gameTime: GameTime = GameTime()
+        self.spriteBatch: SpriteBatch = SpriteBatch()
         self.initialize()
 
     def initialize(self):

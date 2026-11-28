@@ -108,3 +108,6 @@ tempCodeRunnerFile.py
 
 # PyPI configuration file
 .pypirc
+
+game1.py
+!./examples/game1.py
