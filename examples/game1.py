@@ -13,3 +13,11 @@ class Game1(framework.Game):
 
     def draw(self, spriteBatch: None):
         return super().draw(spriteBatch)
+
+
+if __name__ == "__main__":
+    game = Game1()
+
+    while True:
+        game.update(game.gameTime)
+        game.draw(game.spriteBatch)
