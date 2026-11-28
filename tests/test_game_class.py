@@ -1,7 +1,4 @@
-import os
 import unittest
-
-os.path.join(os.path.dirname(__file__), '../pyxil/framework/game.py')
 
 import pyxil.framework as framework
 
