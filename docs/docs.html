@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyxil | Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MKn5NWVBEuQXJE7TSKSgPUmMiSCmVTfCsR+VSSeQpHnoyJQZZFn/kBn+Ht5jZDPQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/content_index.css">
+    <link rel="stylesheet" href="./styles/learn_components.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+<body class="learn-page">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html" aria-label="Pyxil home">
+                    <img class="brand-logo" src="./assets/icon.png" alt="">
+                </a>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="./docs.html" aria-current="page">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./community.html">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./team.html">Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="learn-layout">
+        <aside class="learn-sidebar">
+            <nav aria-label="Documentation navigation">
+                <a class="learn-sidebar__home" href="#api-reference">Pyxil Components</a>
+                <ul>
+                    <li><a href="#overview">Namespaces Overview</a></li>
+                    <li>
+                        <details open>
+                            <summary>Pyxil.Framework</summary>
+                            <ul>
+                                <li><a href="./api/game.html">Game</a></li>
+                                <li><a href="./api/gametime.html">GameTime</a></li>
+                                <li><a href="./api/gamewindow.html">GameWindow</a></li>
+                                <li><a href="./api/vector2.html">Vector2</a></li>
+                                <li><a href="./api/filemanager.html">FileManager</a></li>
+                                <li><a href="./api/color.html">Color</a></li>
+                                <li><a href="./api/rectangle.html">Rectangle</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="learn-sidebar__namespace" onsuspend="">
+                            <summary>Pyxil.Framework.Audio</summary>
+                            <ul>
+                                <li><a href="#">SoundEffect</a></li>
+                                <li><a href="#">MusicTheme</a></li>
+                                <li><a href="#">SoundManager</a></li>
+                                <li><a href="#">MusicManager</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="learn-sidebar__namespace" onsuspend="">
+                            <summary>Pyxil.Framework.Content</summary>
+                            <ul>
+                                <li><a href="#">ContentManager</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="learn-sidebar__namespace" onsuspend="">
+                            <summary>Pyxil.Framework.Graphics</summary>
+                            <ul>
+                                <li><a href="#">SpriteBatch</a></li>
+                                <li><a href="#">TextureEffect2D</a></li>
+                                <li><a href="#">Texture2D</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="learn-sidebar__namespace" onsuspend="">
+                            <summary>Pyxil.Framework.Input</summary>
+                            <ul>
+                                <li><a href="#">Keys</a></li>
+                                <li><a href="#">Mouse</a></li>
+                                <li><a href="#">KeyboardInput</a></li>
+                                <li><a href="#">MouseInput</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="learn-sidebar__namespace" onsuspend="">
+                            <summary>Pyxil.Framework.Utils</summary>
+                            <ul>
+                                <li><a href="#">MathHelper</a></li>
+                                <li><a href="#">RandomVector2D</a></li>
+                                <li><a href="#">GenerateRandomPassword</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><a href="#logging">Logging and Errors</a></li>
+                    <li><a href="#platform-support">Platform Support</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <article class="learn-content">
+            <header class="learn-heading" id="api-reference">
+                <h1>API Reference</h1>
+                <p>
+                    Explore the components and namespaces available in Pyxil 0.3.
+                    This documentation introduces the framework's core architecture,
+                    its main features, and the tools available to developers when building
+                    desktop games with Python.
+                </p>
+            </header>
+
+            <section id="overview" aria-labelledby="overview-title">
+                <h2 id="overview-title">Namespaces Overview</h2>
+                <div class="learn-table-wrap">
+                    <table class="learn-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Namespace</th>
+                                <th scope="col">Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework</code></th>
+                                <td>Core framework classes and game/window management.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework.Audio</code></th>
+                                <td>Core audio framework classes and audio playback.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework.Content</code></th>
+                                <td>Content loading and management through <code>ContentManager</code>.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework.Graphics</code></th>
+                                <td>Rendering, textures, and visual effects.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework.Input</code></th>
+                                <td>Input and I/O, including keyboard, mouse, and gamepad.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Pyxil.Framework.Utils</code></th>
+                                <td>Utilities that assist with game development.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="learn-component" id="logging" aria-labelledby="logging-title">
+                <h2 id="logging-title">Logging and Errors</h2>
+                <p>
+                    Pyxil 0.3 features a structured logging system designed to record framework events
+                    and provide developers with relevant diagnostic information. Log entries include
+                    severity levels, timestamps, and source components, helping developers monitor
+                    application behavior and identify potential issues. Supported log levels include
+                    <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>,
+                    <code>CRITICAL</code>, <code>DEBUG</code>, and <code>EVENT</code>.
+                </p>
+                <p>
+                    The framework also provides descriptive error messages to help developers
+                    understand failed operations, identify their causes, and find appropriate
+                    solutions.
+                </p>
+            </section>
+
+            <section class="learn-component" id="platform-support" aria-labelledby="platform-title">
+                <h2 id="platform-title">Platform Support</h2>
+                <p>
+                    Pyxil 0.3 is designed to support desktop environments across Windows, Linux,
+                    and macOS, with a focus on 64-bit systems. The framework aims to provide a
+                    consistent development experience across different operating systems and
+                    Python environments.
+                </p>
+                <p>
+                    The framework is designed with application distribution in mind, allowing
+                    developers to explore packaging solutions such as PyInstaller, py2exe, and
+                    Nuitka when preparing their games for deployment.
+                </p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="site-footer fluid-container">
+        <div class="site-footer__content">
+            <div class="site-footer__columns">
+                <section class="site-footer__column" aria-labelledby="footer-pyxil">
+                    <h2 id="footer-pyxil">Pyxil</h2>
+                    <a href="./docs.html">Documentation</a>
+                    <a href="./community.html">Community</a>
+                    <a href="./team.html">Team members</a>
+                    <a href="./index.html">Home</a>
+                </section>
+                <section class="site-footer__column" aria-labelledby="footer-involved">
+                    <h2 id="footer-involved">Get Involved</h2>
+                    <a href="https://github.com/1x1-Studio/Pyxil">Source Code</a>
+                    <a href="https://github.com/1x1-Studio/Pyxil/issues">Report Issues</a>
+                    <a href="https://github.com/1x1-Studio/Pyxil/blob/main/LICENSE">MIT License</a>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
