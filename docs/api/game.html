@@ -97,7 +97,9 @@
                             <tr>
                                 <th scope="row"><code>gameWindow</code></th>
                                 <td><code>GameWindow</code></td>
-                                <td>Get the window object.</td>
+                                <td>Get the window object. If the object is None, it must return 
+                                    an instance of ConsoleWindow;
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -117,15 +119,15 @@
                         <tbody>
                             <tr>
                                 <th scope="row"><code>initialize()</code></th>
-                                <td>Describes the operation performed by this method.</td>
+                                <td>Initializes components and instance variables.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>update(gameTime: GameTime)</code></th>
-                                <td>Describes the operation performed by this method.</td>
+                                <td>Updates the game based on GameTime.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>draw(spriteBatch: SpriteBatch)</code></th>
-                                <td>Describes the operation performed by this method.</td>
+                                <td>Renders objects on the screen.</td>
                             </tr>
                         </tbody>
                     </table>
