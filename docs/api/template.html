@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/content_index.css">
+    <link rel="stylesheet" href="../styles/learn_components.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body class="learn-page">
     <header class="site-header">
         <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html" aria-label="Pyxil home">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="Pyxil home">
                     <img class="brand-logo" src="../assets/icon.png" alt="">
                 </a>
                 <ul class="navbar-nav ms-auto align-items-center">
@@ -27,56 +28,109 @@
     </header>
 
     <main class="learn-layout">
-        <article class="learn-content">
-            <h2>ClassName</h2>
-            <p>
-                Namespace: <code>Pyxil.Framework</code>
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-                Amet consectetur adipiscing elit quisque faucibus ex sapien.
-                Quisque faucibus ex sapien vitae pellentesque sem placerat.
-                Vitae pellentesque sem placerat in id cursus mi.
-            </p>
-        </article>
 
         <article class="learn-content">
-            <h2>Constructor</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-                Amet consectetur adipiscing elit quisque faucibus ex sapien.
-            </p>
-        </article>
+            <header class="learn-heading" id="class-name">
+                <h1>ClassName</h1>
+                <p>Namespace: <code>Pyxil.Framework</code></p>
+            </header>
 
-        <article>
-            <div><h2>Properties</h2></div>
-
-            <!-- Property 1 -->
-            <div> 
-                <h3>Property 1</h3>
+            <section id="summary" aria-labelledby="summary-title">
+                <h2 id="summary-title">Summary</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                    Amet consectetur adipiscing elit quisque faucibus ex sapien.
+                    A short description of what <code>ClassName</code> represents,
+                    why developers use it, and what behavior it provides in the framework.
                 </p>
-            </div>
+            </section>
 
-            <!-- Property 2 -->
-            <div> 
-                <h3>Property 2</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                    Amet consectetur adipiscing elit quisque faucibus ex sapien.
-                </p>
-            </div>
+            <section id="definition" aria-labelledby="definition-title">
+                <h2 id="definition-title">Definition</h2>
+                <div class="learn-table-wrap">
+                    <table class="learn-table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Namespace</th>
+                                <td><code>Pyxil.Framework</code></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Assembly</th>
+                                <td><code>Pyxil.dll</code></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Syntax</th>
+                                <td><code>public class ClassName</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-            <!-- Property 3 -->
-            <div> 
-                <h3>Property 3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                    Amet consectetur adipiscing elit quisque faucibus ex sapien.
-                </p>
-            </div>
+            <section id="constructors" aria-labelledby="constructors-title">
+                <h2 id="constructors-title">Constructors</h2>
+                <div class="learn-table-wrap">
+                    <table class="learn-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>ClassName()</code></th>
+                                <td>Initializes a new instance of the <code>ClassName</code> class.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="properties" aria-labelledby="properties-title">
+                <h2 id="properties-title">Properties</h2>
+                <div class="learn-table-wrap">
+                    <table class="learn-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>Property1</code></th>
+                                <td><code>string</code></td>
+                                <td>Gets or sets the first property value.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>Property2</code></th>
+                                <td><code>int</code></td>
+                                <td>Gets or sets the second property value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="methods" aria-labelledby="methods-title">
+                <h2 id="methods-title">Methods</h2>
+                <div class="learn-table-wrap">
+                    <table class="learn-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>MethodName()</code></th>
+                                <td>Describes the operation performed by this method.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </article>
     </main>
 
@@ -85,10 +139,10 @@
             <div class="site-footer__columns">
                 <section class="site-footer__column" aria-labelledby="footer-pyxil">
                     <h2 id="footer-pyxil">Pyxil</h2>
-                    <a href="./docs.html">Documentation</a>
-                    <a href="./community.html">Community</a>
-                    <a href="./team.html">Team members</a>
-                    <a href="./index.html">Home</a>
+                    <a href="../docs.html">Documentation</a>
+                    <a href="../community.html">Community</a>
+                    <a href="../team.html">Team members</a>
+                    <a href="../index.html">Home</a>
                 </section>
 
                 <section class="site-footer__column" aria-labelledby="footer-involved">
