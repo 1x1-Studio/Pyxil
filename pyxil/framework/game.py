@@ -1,3 +1,5 @@
+from . import GameTime
+
 
 class Game(object):
     """Base class for creating a Pyxil application.
@@ -8,7 +10,7 @@ class Game(object):
 
     def __init__(self):
         """Initialize a new :class:`Game` instance."""
-        pass
+        self.gameTime: GameTime = GameTime()
 
     def initialize(self):
         """Initialize the game and prepare its components.
