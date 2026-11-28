@@ -1,4 +1,4 @@
-from . import GameTime
+from pyxil.framework.gametime import GameTime
 
 
 class Game(object):
