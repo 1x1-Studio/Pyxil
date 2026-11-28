@@ -1,9 +1,10 @@
 import unittest
 
-import pyxil.framework as framework
+import pyxil.framework
+from pyxil.framework.graphics import SpriteBatch
 
 
-class GameTest(framework.Game):
+class GameTest(pyxil.framework.Game):
     def __init__(self):
         super().__init__()
 
@@ -21,4 +22,8 @@ class TestGameClass(unittest.TestCase):
 
     def test_create_game_instance(self):
         game = GameTest()
-        self.assertIsInstance(game, framework.Game)
+        
+        self.assertIsInstance(game, pyxil.framework.Game)
+        self.assertIsInstance(game.spriteBatch, SpriteBatch)
+        self.assertIsInstance(game.gameTime, pyxil.framework.GameTime)
+        self.assertIsInstance(game.gameWindow, (pyxil.framework.GameWindow, pyxil.framework.GameConsole))

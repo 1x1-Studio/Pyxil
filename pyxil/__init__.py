@@ -1,5 +1,6 @@
 from . import framework
 
 __all__ = [
-    "framework"
+    "framework",
+    "framework.graphics",
 ]
