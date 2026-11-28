@@ -101,6 +101,14 @@
                                     an instance of ConsoleWindow;
                                 </td>
                             </tr>
+                            <tr>
+                                <th scope="row"><code>gameTime</code></th>
+                                <td><code>GameTime</code></td>
+                                <td>
+                                    It is created before <code>initialize</code> runs. This variable
+                                    manages the application's time.
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -122,11 +130,11 @@
                                 <td>Initializes components and instance variables.</td>
                             </tr>
                             <tr>
-                                <th scope="row"><code>update(gameTime: GameTime)</code></th>
+                                <th scope="row"><code>update(gameTime: GameTime | None)</code></th>
                                 <td>Updates the game based on GameTime.</td>
                             </tr>
                             <tr>
-                                <th scope="row"><code>draw(spriteBatch: SpriteBatch)</code></th>
+                                <th scope="row"><code>draw(spriteBatch: SpriteBatch | None)</code></th>
                                 <td>Renders objects on the screen.</td>
                             </tr>
                         </tbody>
