@@ -50,5 +50,15 @@ class TestGameClass(unittest.TestCase):
         self.assertIsInstance(game.gameTime, pyxil.framework.GameTime)
         self.assertIsInstance(game.gameWindow, pyxil.framework.GameConsole)
 
-    def test_initialize_method_with_an_exception(self):
-        game = GameTestWithError(console=True)
+    def test_game_loop(self):
+        game = GameTest(console=True)
+        counter_update = 0
+        i = 5
+
+        while i >= 1:
+            game.update(game.gameTime)
+            game.draw(None)
+            counter_update = counter_update + 1
+            i = i - 1
+        
+        self.assertEqual(counter_update, 5)
