@@ -15,6 +15,7 @@ class Game(object):
         """Initialize a new :class:`Game` instance."""
         self.gameWindow: Union[GameWindow | GameConsole] = self.__set_window() 
         self.gameTime: GameTime = GameTime()
+        self.initialize()
 
     def initialize(self):
         """Initialize the game and prepare its components.
