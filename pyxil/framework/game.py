@@ -1,5 +1,8 @@
-from pyxil.framework.gametime import GameTime
+from typing import Union
 
+from pyxil.framework.gametime import GameTime
+from pyxil.framework.gamewindow import GameWindow
+from pyxil.framework.gameconsole import GameConsole
 
 class Game(object):
     """Base class for creating a Pyxil application.
@@ -10,6 +13,7 @@ class Game(object):
 
     def __init__(self):
         """Initialize a new :class:`Game` instance."""
+        self.gameWindow: Union[GameWindow | GameConsole] = self.__set_window() 
         self.gameTime: GameTime = GameTime()
 
     def initialize(self):
@@ -39,3 +43,6 @@ class Game(object):
                 needed or is handled by another mechanism.
         """
         pass
+
+    def __set_window(self):
+        return GameConsole()
