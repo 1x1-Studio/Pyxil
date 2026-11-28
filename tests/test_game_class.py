@@ -35,3 +35,6 @@ class TestGameClass(unittest.TestCase):
         self.assertIsInstance(game.spriteBatch, type(None))
         self.assertIsInstance(game.gameTime, pyxil.framework.GameTime)
         self.assertIsInstance(game.gameWindow, pyxil.framework.GameConsole)
+
+    def test_initialize_method_with_an_exception(self):
+        game = GameTest(console=True)
