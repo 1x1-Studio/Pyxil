@@ -14,6 +14,15 @@
     grid-template-columns: 260px minmax(0, 1fr);
 }
 
+.learn-layout--article {
+    grid-template-columns: minmax(0, 1080px);
+    justify-content: center;
+}
+
+.learn-layout--article .learn-content {
+    max-width: 1080px;
+}
+
 .learn-sidebar {
     padding: 1.5rem 1rem;
     background-color: #171a24;
