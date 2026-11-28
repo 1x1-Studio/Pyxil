@@ -1,7 +1,4 @@
-import os
 import unittest
-
-os.path.join(os.path.dirname(__file__), '../pyxil/framework/game.py')
 
 import pyxil.framework as framework
 
@@ -10,14 +7,14 @@ class GameTest(framework.Game):
     def __init__(self):
         super().__init__()
 
-    def start(self):
-        pass
+    def initialize(self):
+        return super().initialize()
 
-    def update(self):
-        pass
+    def update(self, gameTime: None):
+        return super().update(gameTime)
 
-    def render(self):
-        pass
+    def draw(self, spriteBatch: None):
+        return super().draw(spriteBatch)
 
 
 class TestGameClass(unittest.TestCase):
