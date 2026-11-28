@@ -5,8 +5,8 @@ from pyxil.framework.graphics import SpriteBatch
 
 
 class GameTest(pyxil.framework.Game):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, console: bool = False):
+        super().__init__(console=console)
 
     def initialize(self):
         return super().initialize()
@@ -27,3 +27,11 @@ class TestGameClass(unittest.TestCase):
         self.assertIsInstance(game.spriteBatch, SpriteBatch)
         self.assertIsInstance(game.gameTime, pyxil.framework.GameTime)
         self.assertIsInstance(game.gameWindow, (pyxil.framework.GameWindow, pyxil.framework.GameConsole))
+
+    def test_create_game_console(self):
+        game = GameTest(console=True)
+
+        self.assertIsInstance(game, pyxil.framework.Game)
+        self.assertIsInstance(game.spriteBatch, type(None))
+        self.assertIsInstance(game.gameTime, pyxil.framework.GameTime)
+        self.assertIsInstance(game.gameWindow, pyxil.framework.GameConsole)

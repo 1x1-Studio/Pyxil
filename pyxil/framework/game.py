@@ -14,11 +14,16 @@ class Game(object):
     resources, implement game logic, and render the current frame.
     """
 
-    def __init__(self):
-        """Initialize a new :class:`Game` instance."""
-        self.gameWindow: Union[GameWindow | GameConsole] = self.__set_window() 
+    def __init__(self, console: bool = False):
+        """
+        Initialize a new :class:`Game` instance.
+
+        Args:
+            console (bool, optional): Whether to use a console window. Defaults to False.
+        """
+        self.spriteBatch: Union[SpriteBatch, None] = SpriteBatch() if not console else None
+        self.gameWindow: Union[GameWindow, GameConsole] = self.__set_window() 
         self.gameTime: GameTime = GameTime()
-        self.spriteBatch: SpriteBatch = SpriteBatch()
         self.initialize()
 
     def initialize(self):
@@ -50,4 +55,6 @@ class Game(object):
         pass
 
     def __set_window(self):
+        if self.spriteBatch is not None:
+            return GameWindow()
         return GameConsole()
