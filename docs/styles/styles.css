@@ -1,0 +1,113 @@
+:root {
+    --brand-color: #FF165D;
+    --white-color: #FFFFFF;
+}
+
+html {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #68707d #171a24;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #171a24;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #68707d;
+    border: 2px solid #171a24;
+    border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: var(--brand-color);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-header {
+    flex: 1;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(255, 22, 93, 0.13), transparent 55%),
+        linear-gradient(145deg, #10131b, #171a24 55%, #10131b);
+    min-height: 40vh;
+}
+
+.container-header__cubes {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container-header__cubes span {
+    position: absolute;
+    top: 0;
+    left: var(--cube-x);
+    width: var(--cube-size);
+    aspect-ratio: 1;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 7px;
+    background: linear-gradient(145deg, rgba(255, 22, 93, 0.82), rgba(130, 12, 65, 0.72));
+    box-shadow: inset 3px 3px 8px rgba(255, 255, 255, 0.22), 0 0 18px rgba(255, 22, 93, 0.24);
+    opacity: 0.78;
+    animation: falling-cube var(--cube-duration) linear var(--cube-delay) infinite;
+}
+
+.container-header__cubes span:nth-child(1) { --cube-x: 4%; --cube-size: 34px; --cube-duration: 13s; --cube-delay: -8s; }
+.container-header__cubes span:nth-child(2) { --cube-x: 10%; --cube-size: 42px; --cube-duration: 17s; --cube-delay: -12s; }
+.container-header__cubes span:nth-child(3) { --cube-x: 17%; --cube-size: 36px; --cube-duration: 11s; --cube-delay: -4s; }
+.container-header__cubes span:nth-child(4) { --cube-x: 23%; --cube-size: 46px; --cube-duration: 19s; --cube-delay: -15s; }
+.container-header__cubes span:nth-child(5) { --cube-x: 30%; --cube-size: 38px; --cube-duration: 14s; --cube-delay: -9s; }
+.container-header__cubes span:nth-child(6) { --cube-x: 37%; --cube-size: 34px; --cube-duration: 16s; --cube-delay: -6s; }
+.container-header__cubes span:nth-child(7) { --cube-x: 43%; --cube-size: 44px; --cube-duration: 12s; --cube-delay: -10s; }
+.container-header__cubes span:nth-child(8) { --cube-x: 50%; --cube-size: 36px; --cube-duration: 18s; --cube-delay: -13s; }
+.container-header__cubes span:nth-child(9) { --cube-x: 57%; --cube-size: 42px; --cube-duration: 15s; --cube-delay: -7s; }
+.container-header__cubes span:nth-child(10) { --cube-x: 63%; --cube-size: 34px; --cube-duration: 11s; --cube-delay: -5s; }
+.container-header__cubes span:nth-child(11) { --cube-x: 70%; --cube-size: 46px; --cube-duration: 17s; --cube-delay: -14s; }
+.container-header__cubes span:nth-child(12) { --cube-x: 77%; --cube-size: 38px; --cube-duration: 13s; --cube-delay: -9s; }
+.container-header__cubes span:nth-child(13) { --cube-x: 83%; --cube-size: 34px; --cube-duration: 19s; --cube-delay: -16s; }
+.container-header__cubes span:nth-child(14) { --cube-x: 90%; --cube-size: 44px; --cube-duration: 14s; --cube-delay: -11s; }
+.container-header__cubes span:nth-child(15) { --cube-x: 95%; --cube-size: 36px; --cube-duration: 16s; --cube-delay: -8s; }
+.container-header__cubes span:nth-child(16) { --cube-x: 99%; --cube-size: 42px; --cube-duration: 12s; --cube-delay: -3s; }
+
+.container-header__cubes span:nth-child(even) {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(199, 205, 222, 0.72));
+    box-shadow: inset 3px 3px 8px rgba(255, 255, 255, 0.4), 0 0 18px rgba(255, 255, 255, 0.16);
+}
+
+.container-header h2 {
+    z-index: 1;
+}
+
+@keyframes falling-cube {
+    from {
+        transform: translate3d(0, -12vh, 0) rotate(0deg);
+    }
+
+    to {
+        transform: translate3d(0, 112vh, 0) rotate(540deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container-header__cubes span {
+        animation: none;
+        opacity: 0;
+    }
+}
